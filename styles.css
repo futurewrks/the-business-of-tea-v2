@@ -13,29 +13,126 @@ body {
 
 /* Hero Section */
 .hero {
-  background: url('https://source.unsplash.com/1600x600/?tea,plantation') center/cover no-repeat;
-  height: 60vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    padding: 60px 20px; /* Vertical and horizontal padding */
+    max-width: 1200px; /* Constrain width for larger screens */
+    margin: 0 auto; /* Center the section */
+    background-color: #f9f9f9; /* Light background for contrast */
 }
 
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  color: white;
-  border-radius: 10px;
+/* Hero Content (Flex container for h1 and hero-bg) */
+.hero-content {
+    display: flex;
+    align-items: center; /* Vertically center h1 and hero-bg */
+    gap: 40px; /* Space between h1 and hero-bg */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.hero-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+/* Hero Heading */
+.hero-content h1 {
+    flex: 1; /* Take available space */
+    font-size: 3rem; /* Large heading size */
+    font-weight: 700; /* Bold for emphasis */
+    line-height: 1.2; /* Tighter line spacing */
+    color: #2c3e50; /* Dark color for contrast */
+    margin: 0; /* Remove default margin */
 }
 
-.hero-overlay p {
-  font-size: 1.5rem;
+.hero-content h1 span {
+    color: #27ae60; /* Green accent for "World of Tea" */
+}
+
+/* Hero Paragraph */
+.hero-content p {
+    flex: 1; /* Take available space */
+    font-size: 1.1rem; /* Readable size */
+    color: #34495e; /* Slightly lighter than heading */
+    line-height: 1.6; /* Comfortable line spacing */
+    margin: 20px 0 0; /* Space above, align with h1 */
+    max-width: 500px; /* Limit width for readability */
+}
+
+/* Hero Background Illustration */
+.hero-bg {
+    flex: 0 0 auto; /* Don’t stretch, use natural size */
+}
+
+.hero-bg img {
+    max-width: 400px; /* Constrain image width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing */
+}
+
+/* Hero Call-to-Actions */
+.hero-ctas {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 30px; /* Space above CTAs */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.primary-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #27ae60; /* Green for primary action */
+    color: #fff; /* White text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover */
+}
+
+.primary-cta:hover {
+    background-color: #219653; /* Darker green on hover */
+}
+
+.secondary-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent; /* No background */
+    color: #27ae60; /* Green text */
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; /* Remove underline */
+    border: 2px solid #27ae60; /* Green border */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover */
+}
+
+.secondary-cta:hover {
+    background-color: #27ae60; /* Green background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack h1, p, and hero-bg vertically */
+        align-items: flex-start; /* Align to start */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .hero-content p {
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .hero-bg img {
+        max-width: 100%; /* Full width for image */
+    }
+
+    .hero-ctas {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-start; /* Align to start */
+    }
+
+    .primary-cta,
+    .secondary-cta {
+        width: 100%; /* Full-width buttons */
+        text-align: center; /* Center text */
+    }
 }
 
 /* Tile Section */
