@@ -54,7 +54,7 @@ body {
 }
 
 .hero-bg img {
-    max-width: 300px; /* Constrain image width */
+    max-width: 640px; /* Constrain image width */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove inline spacing */
 }
